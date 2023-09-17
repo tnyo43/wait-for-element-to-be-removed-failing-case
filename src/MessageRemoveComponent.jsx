@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-export function MessageRemoveComponent() {
+export function MessageRemoveComponent(props) {
   const [shown, updateShown] = useState(true);
 
   const handleOnClick = () => {
-    const timeout = Math.random() > 0.5 ? 1000 : 0;
+    const timeout = props.duration ?? 0;
 
     setTimeout(() => {
       updateShown(false);
